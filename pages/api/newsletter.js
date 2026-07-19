@@ -12,7 +12,7 @@ async function handler (req, res) {
             let client;
 
             try {
-                client = connectDatabase()
+                client = await connectDatabase()
             }   catch(error){
                 res.status(500).json({message: 'Connecting to database failed!'})
                 return;
